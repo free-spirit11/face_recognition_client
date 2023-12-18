@@ -1,11 +1,11 @@
 {
   "background": {
-    "color": "#282c34"
+    "color": "linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%)"
   },
   "interactivity": {
     "events": {
       "onClick": {
-        "enable": true,
+        "enable": false,
         "mode": "push"
       },
       "onHover": {
@@ -16,10 +16,10 @@
     },
     "modes": {
       "push": {
-        "quantity": 4
+        "quantity": 10
       },
       "repulse": {
-        "distance": 200,
+        "distance": 80,
         "duration": 0.4
       }
     }
@@ -30,7 +30,7 @@
     },
     "links": {
       "color": "#ffffff",
-      "distance": 150,
+      "distance": 250,
       "enable": true,
       "opacity": 0.5,
       "width": 1
@@ -45,14 +45,14 @@
         "default": "bounce"
       },
       "random": false,
-      "speed": 6,
+      "speed": 2,
       "straight": false
     },
     "number": {
       "density": {
         "enable": true
       },
-      "value": 80
+      "value": 150
     },
     "opacity": {
       "value": 0.5
@@ -62,7 +62,7 @@
     },
     "size": {
       "random": true,
-      "value": 5
+      "value": 3
     }
   }
 }
