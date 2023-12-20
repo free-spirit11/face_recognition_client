@@ -57,13 +57,11 @@ class App extends Component {
 
     calculateFaceLocation = (result) => {
         const regions = result.outputs[0].data.regions;
-        console.log("regions BE: ", regions);
         const boxes = [];
 
         const image = document.getElementById('inputimage');
         const width = Number(image.width);
         const height = Number(image.height);
-        console.log("height: ", height)
 
         regions.forEach(region => {
 
