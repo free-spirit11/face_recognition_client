@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./Profile.css";
 import robotImage from './avatar.png';
 
-const Profile = ({ toggleModal, user, loadUser }) => {
+const Profile = ({ toggleModal, user, loadUser, changeModel, model }) => {
     const [name, setName] = useState(user.name);
     const [age, setAge] = useState(user.age);
     const [pet, setPet] = useState(user.pet);
@@ -55,6 +55,12 @@ const Profile = ({ toggleModal, user, loadUser }) => {
                     <h4>{`Images Submitted: ${user.entries}`}</h4>
                     <p>{`Member since: ${new Date(user.joined).toLocaleDateString()}`}</p>
                     <hr />
+                    <label className="mt2 fw6" htmlFor="model">Select model:</label>
+                    {/* TODO: later make sure that when page is refreshed, the selected option stays */}
+                    <select className="pa2 ba w-100" name="Models" id="models-select" value={model} onChange={(e) => changeModel(e.target.value)}>
+                        <option value="face-detection">Face Detection</option>
+                        <option value="general-image-recognition">Image recognition</option>
+                    </select>
                     <label className="mt2 fw6" htmlFor="user-name">Name:</label>
                     <input
                         onChange={onFormChange}
@@ -96,7 +102,7 @@ const Profile = ({ toggleModal, user, loadUser }) => {
                 </main>
                 <div className="modal-close" onClick={toggleModal}>&times;</div>
             </article>
-        </div>
+        </div >
     )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FaceRecognition = ({ imageUrl, boxes }) => {
+const FaceRecognition = ({ imageUrls, boxes }) => {
     const renderBoxes = () => {
         return boxes.map((box, index) => {
             const boxStyle = {
@@ -27,10 +27,22 @@ const FaceRecognition = ({ imageUrl, boxes }) => {
         });
     };
 
+    const renderImages = () => {
+        return imageUrls.map((imageUrl, index) => {
+            return (
+                <div key={index}>
+                    <h1>Image #{index}</h1>
+                    <img key={index} id='inputimage' alt='' src={imageUrl} width='700px' height='auto'></img>
+                </div>
+            )
+        })
+    }
+
     return (
         <div className='center ma'>
             <div className="absolute mt2">
-                <img id='inputimage' alt='' src={imageUrl} width='700px' height='auto'></img>
+                {renderImages()}
+                {/* <img id='inputimage' alt='' src={imageUrls[0]} width='700px' height='auto'></img> */}
                 {renderBoxes()}
             </div>
         </div>
